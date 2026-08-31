@@ -1,8 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sobral Marcenaria — Marcenaria sob medida no Rio de Janeiro e Niterói</title>
+<meta name="description" content="Marcenaria sob medida no Rio de Janeiro e Niterói. Cozinhas, closets, painéis e home theater com arquiteto acompanhando cada etapa, materialidade especificada e prazo cumprido.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.sobralmarcenaria.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Sobral Marcenaria">
+<meta property="og:title" content="Sobral Marcenaria — Marcenaria sob medida no Rio e Niterói">
+<meta property="og:description" content="Cozinhas, closets, painéis e home theater sob medida, com arquiteto em cada etapa e prazo cumprido.">
+<meta property="og:image" content="images/sobral-hero.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f0805">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<!-- ===== CONFIGURAÇÃO DA MÍDIA DO TOPO =====
+     heroMedia: 'foto'  -> mostra a foto images/sobral-hero.webp
+     heroMedia: 'video' -> mostra o vídeo videos/hero.mp4
+     Troque apenas a palavra entre as aspas e salve. -->
+<script>window.SOBRAL = { heroMedia: 'video', heroVideo: 'videos/hero.mp4', heroPoster: 'images/sobral-hero.webp' };</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -52,20 +70,63 @@
       calc(var(--x, 0) * 1px) calc(var(--y, 0) * 1px),
       hsl(0 100% 100% / var(--border-light-opacity, 1)), transparent 100%);
   }
+
+  /* ============ RESPONSIVO ============ */
+  @media (max-width: 1080px) {
+    [data-site] [data-r="hero"] { grid-template-columns: 1fr !important; gap: 40px !important; }
+    [data-site] [data-r="two"], [data-site] [data-r="two-rev"] { grid-template-columns: 1fr !important; gap: 40px !important; }
+    [data-site] [data-r="two-rev"] > div:first-child { order: 2; }
+    [data-site] [data-r="grid3"] { grid-template-columns: repeat(2, 1fr) !important; }
+    [data-site] [data-r="testi"] { grid-template-columns: repeat(2, 1fr) !important; height: 560px !important; }
+    [data-site] [data-r="bento"] { grid-template-columns: repeat(2, 1fr) !important; }
+    [data-site] [data-r="bento"] > div { grid-column: auto !important; grid-row: auto !important; }
+    [data-site] [data-r="foot"] { grid-template-columns: 1fr 1fr !important; gap: 36px !important; }
+  }
+  @media (max-width: 860px) {
+    [data-site] [data-r="nav"] { display: none !important; }
+    [data-site] [data-r="head"] { gap: 12px !important; }
+    [data-site] [data-r="stats"] { grid-template-columns: repeat(2, 1fr) !important; }
+    [data-site] [data-r="stats"] > div:nth-child(-n+2) { border-bottom: 1px solid #dcdce0; }
+    [data-site] [data-r="grid2"], [data-site] [data-r="grid3"] { grid-template-columns: 1fr !important; gap: 24px !important; }
+    [data-site] [data-r="testi"] { grid-template-columns: 1fr !important; height: 480px !important; }
+    [data-site] [data-r="closet-row"] { height: auto !important; flex-direction: column !important; }
+    [data-site] [data-r="closet-row"] > div { flex: none !important; height: 260px !important; }
+    [data-site] [data-r="showcase"] { min-height: 0 !important; }
+    [data-site] [data-r="compare"] { min-height: 520px !important; }
+    [data-site] [data-r="sticky"] { padding: 10px 18px !important; gap: 12px !important; }
+    [data-site] [data-r="sticky"] > div { flex-direction: column !important; align-items: flex-start !important; gap: 2px !important; }
+  }
+  @media (max-width: 620px) {
+    [data-site] section { padding-left: 20px !important; padding-right: 20px !important; padding-top: 68px !important; padding-bottom: 68px !important; }
+    [data-site] > header > div { padding-left: 18px !important; padding-right: 18px !important; }
+    [data-site] > footer { padding: 52px 20px 92px !important; }
+    [data-site] [data-r="bento"] { grid-template-columns: 1fr !important; grid-auto-rows: 220px !important; }
+    [data-site] [data-r="foot"] { grid-template-columns: 1fr !important; }
+    [data-site] [data-r="hero"] { gap: 32px !important; }
+    [data-site] [data-r="compare"] { min-height: 440px !important; }
+    [data-site] [data-parallax] { transform: none !important; }
+  }
+  @media (hover: none) {
+    [data-site] [data-r="closet-row"] > div { flex-grow: 1 !important; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-site] * { animation-duration: 0.001s !important; transition-duration: 0.001s !important; }
+  }
 </style>
 </helmet>
 
-<div ref="{{ rootRef }}" style="--accent: #8a5a3c; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, 'Open Sans', sans-serif; background: #ffffff; color: #1d1d1f; -webkit-font-smoothing: antialiased; letter-spacing: -0.01em; overflow-x: hidden; position: relative;">
+<div ref="{{ rootRef }}" data-site="" style="--accent: #8a5a3c; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, 'Open Sans', sans-serif; background: #ffffff; color: #1d1d1f; -webkit-font-smoothing: antialiased; letter-spacing: -0.01em; overflow-x: hidden; position: relative;">
 
   <!-- ===================== GLOBAL NAV ===================== -->
   <header style="position: sticky; top: 0; z-index: 40; backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); background-color: #0f0805">
-    <div style="max-width: 1320px; margin: 0 auto; padding: 0 32px; height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 0 32px; height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 24px;" data-r="head">
       <a href="#topo" style="text-decoration: none; display: flex; align-items: baseline; gap: 10px;">
         <span style="font-size: 17px; font-weight: 700; letter-spacing: 0.34em; text-indent: 0.34em; color: #f5f5f7; font-family: Montserrat">SOBRAL</span>
         <span style="font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: #86868b; font-family: Montserrat; font-weight: 300">Marcenaria</span>
       </a>
-      <nav style="display: flex; gap: 32px; font-size: 13px; font-weight: 400; color: #d2d2d7;">
+      <nav data-r="nav" style="display: flex; gap: 32px; font-size: 13px; font-weight: 400; color: #d2d2d7;">
         <a href="#projetos" style="color: inherit; text-decoration: none;" style-hover="color:#fff;">Projetos</a>
+        <a href="#galeria" style="color: inherit; text-decoration: none;" style-hover="color:#fff;">Galeria</a>
         <a href="#processo" style="color: inherit; text-decoration: none;" style-hover="color:#fff;">Processo</a>
         <a href="#materiais" style="color: inherit; text-decoration: none;" style-hover="color:#fff;">Materiais</a>
         <a href="#faq" style="color: inherit; text-decoration: none;" style-hover="color:#fff;">FAQ</a>
@@ -76,9 +137,9 @@
 
   <!-- ===================== HERO ===================== -->
   <section id="topo" style="background: #ffffff; padding: 72px 32px 0;">
-    <div style="max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1.04fr 0.96fr; gap: 60px; align-items: stretch;">
+    <div data-r="hero" style="max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1.04fr 0.96fr; gap: 60px; align-items: stretch;">
       <!-- LEFT · text -->
-      <div style="opacity: var(--rv,0); transform: translateY(var(--rvy,22px)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
+      <div style="opacity: var(--rv,0); transform: translate3d(var(--rvx,0px), var(--rvy,22px), 0) scale(var(--rvs,1)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
         <div style="display: inline-flex; align-items: center; gap: 9px; background: #f5f5f7; color: #1d1d1f; padding: 8px 16px; border-radius: 9999px; font-size: 13px; font-weight: 600; letter-spacing: 0; margin-bottom: 28px;">
           <span style="width: 7px; height: 7px; border-radius: 50%; background: var(--accent,#0066cc);"></span>
           Marcenaria Tradicional · Rio &amp; Niterói
@@ -106,14 +167,32 @@
         </div>
       </div>
       <!-- RIGHT · photo -->
-      <div style="display: flex; min-height: 0; opacity: var(--rv,0); transform: translateY(var(--rvy,22px)); transition: opacity .9s cubic-bezier(.22,.61,.36,1) .1s, transform .9s cubic-bezier(.22,.61,.36,1) .1s;">
-        <image-slot id="sobral-hero" src="images/sobral-hero.webp" style="width: 100%; height: 100%; min-height: 360px; box-shadow: rgba(0,0,0,0.22) 3px 5px 30px 0; background: #f5f5f7;" shape="rounded" radius="22" fit="cover" placeholder="Foto principal — cozinha ou ambiente assinatura"></image-slot>
+      <div style="position: relative; display: flex; min-height: 0; opacity: var(--rv,0); transform: translate3d(var(--rvx,0px), var(--rvy,22px), 0) scale(var(--rvs,1)); transition: opacity .9s cubic-bezier(.22,.61,.36,1) .1s, transform .9s cubic-bezier(.22,.61,.36,1) .1s;">
+        <sc-if value="{{ heroIsVideo }}" hint-placeholder-val="{{ false }}">
+          <div style="position: relative; width: 100%; min-height: 360px; border-radius: 22px; overflow: hidden; background: #f5f5f7; box-shadow: rgba(0,0,0,0.22) 3px 5px 30px 0;">
+            <video ref="{{ heroVideoRef }}" autoplay="" muted="" loop="" playsinline="" webkit-playsinline="" preload="auto" disablepictureinpicture="" controlslist="nodownload noplaybackrate" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;"></video>
+          </div>
+        </sc-if>
+        <sc-if value="{{ heroIsPhoto }}" hint-placeholder-val="{{ true }}">
+          <image-slot id="sobral-hero" src="images/sobral-hero.webp" style="width: 100%; height: 100%; min-height: 360px; box-shadow: rgba(0,0,0,0.22) 3px 5px 30px 0; background: #f5f5f7;" shape="rounded" radius="22" fit="cover" placeholder="Foto principal — cozinha ou ambiente assinatura"></image-slot>
+        </sc-if>
+        <sc-if value="{{ editable }}" hint-placeholder-val="{{ false }}">
+          <div style="position: absolute; left: 14px; bottom: 14px; z-index: 4; display: flex; flex-direction: column; gap: 7px; align-items: flex-start;">
+            <div style="display: flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.58); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); padding: 6px 7px; border-radius: 9999px;">
+              <button onClick="{{ heroUseFoto }}" style="cursor: pointer; border: none; font-family: inherit; font-size: 13px; font-weight: 600; padding: 7px 15px; border-radius: 9999px; background: {{ heroFotoBg }}; color: {{ heroFotoFg }};" style-active="transform:scale(0.95);">Foto</button>
+              <button onClick="{{ heroUseVideo }}" style="cursor: pointer; border: none; font-family: inherit; font-size: 13px; font-weight: 600; padding: 7px 15px; border-radius: 9999px; background: {{ heroVideoBg }}; color: {{ heroVideoFg }};" style-active="transform:scale(0.95);">Vídeo</button>
+            </div>
+            <sc-if value="{{ heroIsVideo }}" hint-placeholder-val="{{ false }}">
+              <div style="max-width: 320px; background: rgba(0,0,0,0.58); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); color: #fff; padding: 9px 13px; border-radius: 14px; font-size: 12px; line-height: 1.45;">{{ heroVideoHint }}</div>
+            </sc-if>
+          </div>
+        </sc-if>
       </div>
     </div>
     <!-- trust strip -->
     <div style="max-width: 1100px; margin: 0 auto; padding: 64px 0 88px;">
       <div style="background: #f5f5f7; border-radius: 24px; overflow: hidden;">
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); margin-left: -1px;">
+        <div data-r="stats" style="display: grid; grid-template-columns: repeat(4, 1fr); margin-left: -1px;">
           <sc-for list="{{ stats }}" as="stat" hint-placeholder-count="4">
             <div style="text-align: center; padding: 40px 16px; border-left: 1px solid #dcdce0;">
               <div style="font-size: clamp(42px, 5vw, 64px); font-weight: 600; line-height: 1; letter-spacing: -0.03em; color: var(--accent,#0066cc);">{{ stat.value }}</div>
@@ -126,13 +205,13 @@
   </section>
 
   <!-- ===================== SHOWCASE TILE · COZINHAS (foto de fundo) ===================== -->
-  <section id="projetos" style="position: relative; min-height: 660px; display: flex; align-items: center; justify-content: center; padding: 110px 32px; overflow: hidden; background: #1d1d1f; color: #f5f5f7;">
-    <image-slot id="sobral-cozinha" src="images/sobral-cozinha.webp" style="position: absolute; inset: 0; width: 100%; height: 100%;" shape="rect" fit="cover" placeholder="Solte a foto da cozinha — ela vira o fundo desta seção"></image-slot>
+  <section id="projetos" data-r="showcase" style="position: relative; min-height: 660px; display: flex; align-items: center; justify-content: center; padding: 110px 32px; overflow: hidden; background: #1d1d1f; color: #f5f5f7;">
+    <image-slot id="sobral-cozinha" src="images/sobral-cozinha.webp" data-parallax="0.10" style="position: absolute; inset: 0; width: 100%; height: 100%;" shape="rect" fit="cover" placeholder="Solte a foto da cozinha — ela vira o fundo desta seção"></image-slot>
     <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,15,12,0.45) 0%, rgba(18,15,12,0.72) 100%); pointer-events: none;"></div>
-    <div style="position: relative; z-index: 2; pointer-events: none; text-align: center; max-width: 760px; opacity: var(--rv,0); transform: translateY(var(--rvy,22px)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
+    <div style="position: relative; z-index: 2; pointer-events: none; text-align: center; max-width: 760px; opacity: var(--rv,0); transform: translate3d(var(--rvx,0px), var(--rvy,22px), 0) scale(var(--rvs,1)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
       <div style="font-size: 14px; font-weight: 600; color: #e6c9a8; margin-bottom: 14px; letter-spacing: 0; text-shadow: 0 1px 14px rgba(0,0,0,0.5);">Cozinhas</div>
-      <h2 style="font-size: clamp(34px, 4.4vw, 56px); font-weight: 600; line-height: 1.06; letter-spacing: -0.03em; margin: 0 0 18px; color: #fff; text-shadow: 0 2px 24px rgba(0,0,0,0.55);">Onde a casa realmente acontece.</h2>
-      <p style="font-size: clamp(18px, 2.1vw, 24px); font-weight: 400; line-height: 1.4; color: #f0e8df; margin: 0 0 22px; text-shadow: 0 1px 18px rgba(0,0,0,0.55);">Carvalho, freijó e laca; ferragens que abrem macio por décadas. Cada cuba, tomada e iluminação no lugar exato do seu uso.</p>
+      <h2 style="font-size: clamp(34px, 4.4vw, 56px); font-weight: 600; line-height: 1.06; letter-spacing: -0.03em; margin: 0 0 18px; color: #fff; text-shadow: 0 2px 24px rgba(0,0,0,0.55);">A cozinha desenhada para o seu uso.</h2>
+      <p style="font-size: clamp(18px, 2.1vw, 24px); font-weight: 400; line-height: 1.4; color: #f0e8df; margin: 0 0 22px; text-shadow: 0 1px 18px rgba(0,0,0,0.55);">Carvalho, freijó e laca, com ferragens que continuam macias depois de anos de uso. Cuba, tomadas e iluminação ficam onde você realmente precisa.</p>
       <a href="{{ waLink }}" target="_blank" rel="noopener" style="pointer-events: auto; text-decoration: none; display: inline-flex; align-items: center; gap: 9px; color: #fff; background-color: #25d366; padding: 13px 26px; border-radius: 9999px; font-size: 17px; font-weight: 700;" style-active="transform:scale(0.96);">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"></path></svg>
         Conversar sobre minha cozinha
@@ -150,16 +229,16 @@
 
   <!-- ===================== SHOWCASE TILE · CLOSETS (parchment) ===================== -->
   <section style="background: #f5f5f7; color: #1d1d1f; padding: 96px 32px;">
-    <div style="max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 0.82fr 1.18fr; gap: 56px; align-items: center;">
-      <div style="opacity: var(--rv,0); transform: translateY(var(--rvy,22px)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
+    <div data-r="two" style="max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 0.82fr 1.18fr; gap: 56px; align-items: center;">
+      <div style="opacity: var(--rv,0); transform: translate3d(var(--rvx,0px), var(--rvy,22px), 0) scale(var(--rvs,1)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
         <div style="font-size: 14px; font-weight: 600; color: var(--accent,#0066cc); margin-bottom: 14px;">Closets &amp; Dormitórios</div>
         <h2 style="font-size: clamp(32px, 3.6vw, 50px); font-weight: 600; line-height: 1.06; letter-spacing: -0.03em; margin: 0 0 18px;">Cada centímetro, pensado.</h2>
-        <p style="font-size: clamp(18px, 1.9vw, 22px); font-weight: 400; line-height: 1.45; color: #6e6e73; margin: 0 0 24px;">Iluminação interna, divisórias sob medida e acabamento que continua impecável depois do uso diário. Um closet que organiza a sua rotina não o contrário.</p>
+        <p style="font-size: clamp(18px, 1.9vw, 22px); font-weight: 400; line-height: 1.45; color: #6e6e73; margin: 0 0 24px;">Iluminação interna, divisórias sob medida e acabamento que continua impecável depois do uso diário. Um closet que se adapta à sua rotina, e não o contrário.</p>
         <a href="{{ waLink }}" target="_blank" rel="noopener" style="text-decoration: none; display: inline-flex; align-items: center; gap: 7px; color: var(--accent,#0066cc); font-size: 17px;" style-hover="text-decoration:underline;">Quero um quarto feito para mim!
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
         </a>
       </div>
-      <div style="display: flex; gap: 14px; height: clamp(380px, 42vw, 480px); opacity: var(--rv,0); transform: translateY(var(--rvy,22px)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
+      <div data-r="closet-row" style="display: flex; gap: 14px; height: clamp(380px, 42vw, 480px); opacity: var(--rv,0); transform: translate3d(var(--rvx,0px), var(--rvy,22px), 0) scale(var(--rvs,1)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
         <sc-for list="{{ closets }}" as="c" hint-placeholder-count="3">
           <div onMouseEnter="{{ c.onEnter }}" onMouseLeave="{{ c.onLeave }}" data-glow="" style="--base: 30; --spread: 90; --radius: 22; --border: 2; --backdrop: hsl(28 30% 50% / 0.10); --backup-border: var(--backdrop); --size: 240; --border-size: calc(var(--border, 2) * 1px); --spotlight-size: calc(var(--size, 200) * 1px); --hue: calc(var(--base) + (var(--xp, 0) * var(--spread, 0))); background-image: radial-gradient(var(--spotlight-size) var(--spotlight-size) at calc(var(--x, 0) * 1px) calc(var(--y, 0) * 1px), hsl(var(--hue, 30) calc(var(--saturation, 90) * 1%) calc(var(--lightness, 68) * 1%) / var(--bg-spot-opacity, 0.12)), transparent); background-color: var(--backdrop, transparent); background-size: calc(100% + (2 * var(--border-size))) calc(100% + (2 * var(--border-size))); background-position: 50% 50%; background-attachment: fixed; border: var(--border-size) solid var(--backup-border); position: relative; flex-grow: {{ c.grow }}; flex-shrink: 1; flex-basis: 0; min-width: 0; height: 100%; border-radius: 22px; transition: flex-grow .55s cubic-bezier(.4,0,.2,1); box-shadow: rgba(0,0,0,0.35) 0 16px 40px;">
             <div style="position: absolute; inset: 0; border-radius: 20px; overflow: hidden;">
@@ -179,19 +258,21 @@
   <!-- ===================== SHOWCASE TILE · SALAS (dark) ===================== -->
   <section style="position: relative; background: #1d1d1f; color: #f5f5f7; padding: 96px 32px; overflow: hidden;">
     <div style="position: absolute; inset: 0; pointer-events: none; opacity: 0.5; background-image: radial-gradient(rgba(255,255,255,0.05) 1.5px, transparent 1.6px); background-size: 26px 26px;"></div>
-    <div style="position: relative; max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 64px; align-items: center;">
+    <div style="position: relative; max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 64px; align-items: center;" data-r="two-rev">
       <!-- LEFT · molduras escalonadas -->
-      <div style="position: relative; opacity: var(--rv,0); transform: translateY(var(--rvy,22px)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
+      <div style="position: relative; opacity: var(--rv,0); transform: translate3d(var(--rvx,0px), var(--rvy,22px), 0) scale(var(--rvs,1)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
         <div ref="{{ galleryRef }}" onScroll="{{ onGalleryScroll }}" data-gallery="" style="display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding: 4px 0 6px; scrollbar-width: none;">
           <sc-for list="{{ galleryItems }}" as="g" hint-placeholder-count="3">
             <div style="position: relative; flex: 0 0 82%; scroll-snap-align: center; aspect-ratio: 4/3; border-radius: 24px; overflow: hidden; box-shadow: rgba(0,0,0,0.5) 0 18px 44px;">
               <image-slot id="{{ g.slotId }}" src="images/{{ g.slotId }}.webp" style="position: absolute; inset: 0; width: 100%; height: 100%;" shape="rect" fit="cover" placeholder="{{ g.ph }}"></image-slot>
               <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(0,0,0,0) 42%, rgba(0,0,0,0.72) 100%);"></div>
               <div style="position: absolute; left: 22px; bottom: 22px; right: 22px; pointer-events: none; font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: #fff; text-shadow: 0 1px 14px rgba(0,0,0,0.6);">{{ g.title }}</div>
-              <button onClick="{{ g.upload }}" style="position: absolute; top: 14px; right: 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.92); color: #1d1d1f; border: none; padding: 8px 14px; border-radius: 9999px; font-family: inherit; font-size: 13px; font-weight: 600;" style-hover="background:#fff;" style-active="transform:scale(0.96);">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M17 8l-5-5-5 5"></path><path d="M12 3v12"></path></svg>
-                Enviar foto
-              </button>
+              <sc-if value="{{ editable }}" hint-placeholder-val="{{ false }}">
+                <button onClick="{{ g.upload }}" style="position: absolute; top: 14px; right: 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.92); color: #1d1d1f; border: none; padding: 8px 14px; border-radius: 9999px; font-family: inherit; font-size: 13px; font-weight: 600;" style-hover="background:#fff;" style-active="transform:scale(0.96);">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M17 8l-5-5-5 5"></path><path d="M12 3v12"></path></svg>
+                  Enviar foto
+                </button>
+              </sc-if>
             </div>
           </sc-for>
         </div>
@@ -212,14 +293,14 @@
         </div>
       </div>
       <!-- RIGHT · texto -->
-      <div style="opacity: var(--rv,0); transform: translateY(var(--rvy,22px)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
+      <div style="opacity: var(--rv,0); transform: translate3d(var(--rvx,0px), var(--rvy,22px), 0) scale(var(--rvs,1)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
         <div style="font-size: 14px; font-weight: 600; color: #c9a47a; margin-bottom: 14px;">Salas, Painéis &amp; Home Theater</div>
         <h2 style="font-size: clamp(32px, 3.8vw, 52px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 18px; color: #f5f5f7;">Marcenaria integrada à arquitetura.</h2>
-        <p style="font-size: clamp(17px, 1.7vw, 20px); font-weight: 400; line-height: 1.5; color: #b9b3aa; margin: 0 0 34px; max-width: 460px;">Painéis ripados, racks, estantes e a fiação escondida onde deve estar. A peça deixa de ser um móvel e passa a ser parte do ambiente.</p>
+        <p style="font-size: clamp(17px, 1.7vw, 20px); font-weight: 400; line-height: 1.5; color: #b9b3aa; margin: 0 0 34px; max-width: 460px;">Painéis ripados, racks e estantes com a fiação toda embutida. O resultado parece parte da parede, e não um móvel encostado nela.</p>
         <div style="display: flex; gap: 40px; margin-bottom: 36px; flex-wrap: wrap;">
           <div>
             <div style="font-size: clamp(22px, 2.2vw, 28px); font-weight: 600; letter-spacing: -0.02em; color: #fff;">Uma entrega</div>
-            <div style="font-size: 13px; color: #8d8780; margin-top: 6px; max-width: 180px; line-height: 1.4;">Marcenaria, serralheria e fiação integradas</div>
+            <div style="font-size: 13px; color: #8d8780; margin-top: 6px; max-width: 180px; line-height: 1.4;">Marcenaria, serralheria e fiação na mesma obra</div>
           </div>
           <div>
             <div style="font-size: clamp(22px, 2.2vw, 28px); font-weight: 600; letter-spacing: -0.02em; color: #fff;">Sob medida</div>
@@ -236,21 +317,21 @@
 
   <!-- ===================== VALUE PROP ===================== -->
   <section style="background: #ffffff; padding: 116px 32px;">
-    <div style="max-width: 860px; margin: 0 auto; text-align: center; opacity: var(--rv,0); transform: translateY(var(--rvy,22px)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
-      <p style="font-size: clamp(28px, 3.4vw, 44px); font-weight: 600; line-height: 1.18; letter-spacing: -0.02em; margin: 0 0 28px;">Você sabe exatamente o que quer.<br>O difícil nunca foi a ideia é achar quem execute sem te fazer repetir três vezes.</p>
-      <p style="font-size: 19px; line-height: 1.55; color: #6e6e73; max-width: 600px; margin: 0 auto;">Na Sobral, você explica uma vez. Há 16 anos o ofício começa pela escuta e termina na entrega que você imaginou documentada, garantida, com arquiteto presente em cada etapa.</p>
+    <div style="max-width: 860px; margin: 0 auto; text-align: center; opacity: var(--rv,0); transform: translate3d(var(--rvx,0px), var(--rvy,22px), 0) scale(var(--rvs,1)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
+      <p style="font-size: clamp(28px, 3.4vw, 44px); font-weight: 600; line-height: 1.18; letter-spacing: -0.02em; margin: 0 0 28px;">Você sabe exatamente o que quer.<br>O difícil é encontrar quem execute sem te fazer repetir três vezes.</p>
+      <p style="font-size: 19px; line-height: 1.55; color: #6e6e73; max-width: 600px; margin: 0 auto;">Na Sobral você explica uma vez. O trabalho começa pela escuta e termina na entrega que você imaginou, documentada e acompanhada por arquiteto em todas as etapas.</p>
     </div>
   </section>
 
   <!-- ===================== GALERIA (bento) ===================== -->
   <section id="galeria" style="background: #1d1d1f; color: #f5f5f7; padding: 116px 32px; overflow: hidden;">
     <div style="max-width: 1320px; margin: 0 auto;">
-      <div style="max-width: 720px; margin: 0 auto 56px; text-align: center; opacity: var(--rv,0); transform: translateY(var(--rvy,22px)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
+      <div style="max-width: 720px; margin: 0 auto 56px; text-align: center; opacity: var(--rv,0); transform: translate3d(var(--rvx,0px), var(--rvy,22px), 0) scale(var(--rvs,1)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
         <div style="font-size: 14px; font-weight: 600; color: #c9a47a; margin-bottom: 14px;">Galeria</div>
-        <h2 style="font-size: clamp(34px, 4.2vw, 56px); font-weight: 600; line-height: 1.06; letter-spacing: -0.03em; margin: 0 0 18px; color: #f5f5f7;">O portfólio que fala por si.</h2>
-        <p style="font-size: 19px; line-height: 1.5; color: #b9b3aa; margin: 0;">Toque em qualquer projeto para ampliar. Cada peça aqui foi desenhada, executada e entregue pela Sobral.</p>
+        <h2 style="font-size: clamp(34px, 4.2vw, 56px); font-weight: 600; line-height: 1.06; letter-spacing: -0.03em; margin: 0 0 18px; color: #f5f5f7;">Alguns projetos entregues.</h2>
+        <p style="font-size: 19px; line-height: 1.5; color: #b9b3aa; margin: 0;">Toque em qualquer foto para ampliar. Todos os ambientes abaixo foram desenhados, executados e instalados pela nossa equipe.</p>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: clamp(150px, 15.5vw, 210px); gap: 16px; opacity: var(--rv,0); transform: translateY(var(--rvy,22px)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
+      <div data-r="bento" style="display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: clamp(150px, 15.5vw, 210px); gap: 16px; opacity: var(--rv,0); transform: translate3d(var(--rvx,0px), var(--rvy,22px), 0) scale(var(--rvs,1)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
         <sc-for list="{{ galeriaItems }}" as="g" hint-placeholder-count="7">
           <div style="grid-column: {{ g.col }}; grid-row: {{ g.row }}; position: relative; border-radius: 22px; overflow: hidden; background: #0f0805; box-shadow: rgba(0,0,0,0.45) 0 16px 40px;">
             <image-slot id="{{ g.slotId }}" src="images/{{ g.slotId }}.webp" style="position: absolute; inset: 0; width: 100%; height: 100%;" shape="rect" fit="cover" placeholder="{{ g.ph }}"></image-slot>
@@ -295,11 +376,11 @@
   <!-- ===================== PAIN ===================== -->
   <section style="background: #f5f5f7; padding: 104px 32px;">
     <div style="max-width: 1080px; margin: 0 auto;">
-      <div style="text-align: center; max-width: 680px; margin: 0 auto 56px; opacity: var(--rv,0); transform: translateY(var(--rvy,22px)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
+      <div style="text-align: center; max-width: 680px; margin: 0 auto 56px; opacity: var(--rv,0); transform: translate3d(var(--rvx,0px), var(--rvy,22px), 0) scale(var(--rvs,1)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
         <div style="font-size: 14px; font-weight: 600; color: var(--accent,#0066cc); margin-bottom: 14px;">O que te trouxe aqui</div>
         <h2 style="font-size: clamp(30px, 3.4vw, 46px); font-weight: 600; line-height: 1.08; letter-spacing: -0.03em; margin: 0;">Já passou por algum destes?</h2>
       </div>
-      <div style="display: grid; gap: 1px; background: #e0e0e0; border: 1px solid #e0e0e0; border-radius: 18px; overflow: hidden;">
+      <div data-stagger="" style="display: grid; gap: 1px; background: #e0e0e0; border: 1px solid #e0e0e0; border-radius: 18px; overflow: hidden;">
         <sc-for list="{{ pains }}" as="pain" hint-placeholder-count="5">
           <div style="display: flex; gap: 22px; align-items: flex-start; padding: 26px 28px; background: #ffffff;">
             <span style="flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: #f0f0f0; color: #86868b; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600;">{{ pain.n }}</span>
@@ -313,31 +394,31 @@
   <!-- ===================== PROCESS (icons) ===================== -->
   <section id="processo" style="background: #ffffff; padding: 116px 32px;">
     <div style="max-width: 1180px; margin: 0 auto;">
-      <div style="text-align: center; max-width: 720px; margin: 0 auto 64px; opacity: var(--rv,0); transform: translateY(var(--rvy,22px)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
+      <div style="text-align: center; max-width: 720px; margin: 0 auto 64px; opacity: var(--rv,0); transform: translate3d(var(--rvx,0px), var(--rvy,22px), 0) scale(var(--rvs,1)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
         <div style="font-size: 14px; font-weight: 600; color: var(--accent,#0066cc); margin-bottom: 14px;">O método</div>
-        <h2 style="font-size: clamp(34px, 4.2vw, 56px); font-weight: 600; line-height: 1.06; letter-spacing: -0.03em; margin: 0 0 18px;">A Sobral não vende móveis. Vende um processo.</h2>
-        <p style="font-size: 19px; line-height: 1.5; color: #6e6e73; margin: 0;">O processo que elimina a distância entre o que foi pedido e o que foi entregue.</p>
+        <h2 style="font-size: clamp(34px, 4.2vw, 56px); font-weight: 600; line-height: 1.06; letter-spacing: -0.03em; margin: 0 0 18px;">Como um projeto acontece aqui.</h2>
+        <p style="font-size: 19px; line-height: 1.5; color: #6e6e73; margin: 0;">Quatro etapas que mantêm o que foi pedido igual ao que é entregue.</p>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+      <div data-r="grid2" data-stagger="" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
         <div style="background: #f5f5f7; border-radius: 18px; padding: 40px 36px;">
           <div style="width: 52px; height: 52px; border-radius: 14px; background: #fff; display: flex; align-items: center; justify-content: center; margin-bottom: 22px;">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--accent,#0066cc)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
           </div>
-          <h3 style="font-size: 23px; font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 12px;">Interpretação antes de execução</h3>
-          <p style="font-size: 16px; line-height: 1.5; color: #6e6e73; margin: 0;">Antes de cortar uma tábua, entendemos o projeto inteiro cômodo, materialidade e uso real do espaço. Você não vai precisar repetir.</p>
+          <h3 style="font-size: 23px; font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 12px;">Entender antes de cortar</h3>
+          <p style="font-size: 16px; line-height: 1.5; color: #6e6e73; margin: 0;">Levantamento do projeto inteiro antes da produção: cômodo, materialidade e como o espaço é usado no dia a dia. Você não precisa repetir.</p>
         </div>
         <div style="background: #f5f5f7; border-radius: 18px; padding: 40px 36px;">
           <div style="width: 52px; height: 52px; border-radius: 14px; background: #fff; display: flex; align-items: center; justify-content: center; margin-bottom: 22px;">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--accent,#0066cc)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"></path><path d="m14.5 12.5 2-2"></path><path d="m11.5 9.5 2-2"></path><path d="m8.5 6.5 2-2"></path><path d="m17.5 15.5 2-2"></path></svg>
           </div>
           <h3 style="font-size: 23px; font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 12px;">Arquiteto do início ao fim</h3>
-          <p style="font-size: 16px; line-height: 1.5; color: #6e6e73; margin: 0;">Um arquiteto acompanha cada etapa como garantia de qualidade técnica em cada decisão não como formalidade.</p>
+          <p style="font-size: 16px; line-height: 1.5; color: #6e6e73; margin: 0;">Um arquiteto acompanha cada etapa e responde pelas decisões técnicas do projeto.</p>
         </div>
         <div style="background: #f5f5f7; border-radius: 18px; padding: 40px 36px;">
           <div style="width: 52px; height: 52px; border-radius: 14px; background: #fff; display: flex; align-items: center; justify-content: center; margin-bottom: 22px;">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--accent,#0066cc)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"></path><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"></path><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"></path></svg>
           </div>
-          <h3 style="font-size: 23px; font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 12px;">Múltiplas materialidades</h3>
+          <h3 style="font-size: 23px; font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 12px;">Todas as materialidades</h3>
           <p style="font-size: 16px; line-height: 1.5; color: #6e6e73; margin: 0;">Madeira natural, vidro, serralheria, laca, vernizes, forrações e ferragens exclusivas. Tudo em uma única entrega.</p>
         </div>
         <div style="background: #f5f5f7; border-radius: 18px; padding: 40px 36px;">
@@ -345,7 +426,7 @@
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--accent,#0066cc)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="m9 16 2 2 4-4"></path></svg>
           </div>
           <h3 style="font-size: 23px; font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 12px;">Documentação de cada etapa</h3>
-          <p style="font-size: 16px; line-height: 1.5; color: #6e6e73; margin: 0;">Cronograma comunicado e registro ativo. Você sabe o que está acontecendo no seu projeto sempre.</p>
+          <p style="font-size: 16px; line-height: 1.5; color: #6e6e73; margin: 0;">Cronograma combinado e registro de cada fase. Você acompanha em que ponto está o seu projeto.</p>
         </div>
       </div>
     </div>
@@ -354,14 +435,14 @@
   <!-- ===================== MATERIALS ===================== -->
   <section id="materiais" style="background: #f5f5f7; padding: 116px 32px;">
     <div style="max-width: 1320px; margin: 0 auto;">
-      <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; margin-bottom: 48px; opacity: var(--rv,0); transform: translateY(var(--rvy,22px)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; margin-bottom: 48px; opacity: var(--rv,0); transform: translate3d(var(--rvx,0px), var(--rvy,22px), 0) scale(var(--rvs,1)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
         <div>
           <div style="font-size: 14px; font-weight: 600; color: var(--accent,#0066cc); margin-bottom: 14px;">Materialidades</div>
-          <h2 style="font-size: clamp(32px, 3.8vw, 52px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; margin: 0;">O material certo.<br>Não o disponível.</h2>
+          <h2 style="font-size: clamp(32px, 3.8vw, 52px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; margin: 0;">O material que o<br>projeto pede.</h2>
         </div>
-        <p style="font-size: 17px; line-height: 1.5; color: #6e6e73; max-width: 380px; margin: 0;">Madeira natural, vidro, serralheria, laca, vernizes, forrações e ferragens exclusivas tudo em uma única entrega, sem terceirizar o que importa.</p>
+        <p style="font-size: 17px; line-height: 1.5; color: #6e6e73; max-width: 380px; margin: 0;">Madeira natural, vidro, serralheria, laca, vernizes, forrações e ferragens exclusivas, tudo em uma única entrega e sem terceirizar o que importa.</p>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+      <div data-r="grid3" data-stagger="" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
         <sc-for list="{{ materials }}" as="mat" hint-placeholder-count="6">
           <div>
             <div style="overflow: hidden; border-radius: 16px;">
@@ -380,25 +461,25 @@
   <!-- ===================== BENEFITS (icons) ===================== -->
   <section style="background: #ffffff; padding: 116px 32px;">
     <div style="max-width: 1180px; margin: 0 auto;">
-      <div style="max-width: 720px; margin: 0 0 60px; opacity: var(--rv,0); transform: translateY(var(--rvy,22px)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
+      <div style="max-width: 720px; margin: 0 0 60px; opacity: var(--rv,0); transform: translate3d(var(--rvx,0px), var(--rvy,22px), 0) scale(var(--rvs,1)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
         <div style="font-size: 14px; font-weight: 600; color: var(--accent,#0066cc); margin-bottom: 14px;">A transformação</div>
         <h2 style="font-size: clamp(34px, 4.2vw, 56px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; margin: 0;">Com a Sobral, você vai:</h2>
       </div>
-      <div data-benefits="" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px 40px;">
+      <div data-benefits="" data-r="grid3" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px 40px;">
         <div>
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--accent,#0066cc)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 18px;"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
           <h3 style="font-size: 21px; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 10px;">Explicar uma vez</h3>
-          <p style="font-size: 16px; line-height: 1.5; color: #6e6e73; margin: 0;">E confiar que foi compreendido. Sem reuniões em loop, sem retrabalho no meio da execução.</p>
+          <p style="font-size: 16px; line-height: 1.5; color: #6e6e73; margin: 0;">E ter certeza de que foi entendido, sem reuniões repetidas nem retrabalho no meio da execução.</p>
         </div>
         <div>
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--accent,#0066cc)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 18px;"><rect width="7" height="7" x="3" y="3" rx="1"></rect><rect width="7" height="7" x="14" y="3" rx="1"></rect><rect width="7" height="7" x="14" y="14" rx="1"></rect><rect width="7" height="7" x="3" y="14" rx="1"></rect></svg>
           <h3 style="font-size: 21px; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 10px;">O ambiente completo</h3>
-          <p style="font-size: 16px; line-height: 1.5; color: #6e6e73; margin: 0;">Cozinha, closet, sala projetados como um todo, entregues como um todo. Não peça por peça.</p>
+          <p style="font-size: 16px; line-height: 1.5; color: #6e6e73; margin: 0;">Cozinha, closet e sala projetados e entregues como um conjunto, não peça por peça.</p>
         </div>
         <div>
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--accent,#0066cc)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 18px;"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
           <h3 style="font-size: 21px; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 10px;">Acompanhamento em tempo real</h3>
-          <p style="font-size: 16px; line-height: 1.5; color: #6e6e73; margin: 0;">Documentação ativa e cronograma comunicado. Você sabe exatamente onde está cada etapa.</p>
+          <p style="font-size: 16px; line-height: 1.5; color: #6e6e73; margin: 0;">Registro das etapas e cronograma combinado, para você saber em que ponto está a produção.</p>
         </div>
         <div>
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--accent,#0066cc)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 18px;"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
@@ -413,7 +494,7 @@
         <div>
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--accent,#0066cc)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 18px;"><path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path></svg>
           <h3 style="font-size: 21px; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 10px;">Um imóvel valorizado</h3>
-          <p style="font-size: 16px; line-height: 1.5; color: #6e6e73; margin: 0;">Materiais corretos, técnica correta, acabamento que o tempo respeita um projeto que dura décadas.</p>
+          <p style="font-size: 16px; line-height: 1.5; color: #6e6e73; margin: 0;">Materiais e técnica corretos, com acabamento que resiste ao tempo. Um projeto que dura décadas.</p>
         </div>
       </div>
     </div>
@@ -422,8 +503,8 @@
   <!-- ===================== TESTIMONIALS ===================== -->
   <section style="background: #f5f5f7; padding: 116px 32px;">
     <div style="max-width: 1320px; margin: 0 auto;">
-      <h2 style="font-size: clamp(30px, 3.6vw, 50px); font-weight: 600; line-height: 1.06; letter-spacing: -0.03em; margin: 0 0 52px; max-width: 760px; opacity: var(--rv,0); transform: translateY(var(--rvy,22px)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">30+ arquitetos confiam a reputação deles ao nosso trabalho.</h2>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; height: 620px; overflow: hidden; -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%);">
+      <h2 style="font-size: clamp(30px, 3.6vw, 50px); font-weight: 600; line-height: 1.06; letter-spacing: -0.03em; margin: 0 0 52px; max-width: 760px; opacity: var(--rv,0); transform: translate3d(var(--rvx,0px), var(--rvy,22px), 0) scale(var(--rvs,1)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">30+ arquitetos parceiros indicam a Sobral aos clientes deles.</h2>
+      <div data-r="testi" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; height: 620px; overflow: hidden; -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%);">
         <sc-for list="{{ testimonialColumns }}" as="col" hint-placeholder-count="3">
           <div style="display: flex; flex-direction: column; gap: 24px; padding-bottom: 24px; animation: marqueeUp {{ col.duration }} linear infinite; will-change: transform;" style-hover="animation-play-state:paused;">
             <sc-for list="{{ col.cards }}" as="t" hint-placeholder-count="4">
@@ -445,7 +526,7 @@
   </section>
 
   <!-- ===================== GARANTIA (dark · full-bleed compare) ===================== -->
-  <section style="position: relative; background: #000000; color: #f5f5f7; padding: 130px 32px; overflow: hidden; min-height: clamp(560px, 62vw, 720px); display: flex; align-items: center;">
+  <section style="position: relative; background: #000000; color: #f5f5f7; padding: 130px 32px; overflow: hidden; min-height: clamp(560px, 62vw, 720px); display: flex; align-items: center;" data-r="compare">
     <!-- BACKGROUND · image-comparison slider fills the whole section -->
     <div onMouseMove="{{ onCompareMove }}" onMouseUp="{{ onCompareUp }}" onMouseLeave="{{ onCompareUp }}" onTouchMove="{{ onCompareMove }}" onTouchEnd="{{ onCompareUp }}" style="position: absolute; inset: 0; z-index: 0; overflow: hidden; user-select: none; -webkit-user-select: none; touch-action: none; cursor: ew-resize;">
       <!-- bottom layer · DEPOIS (revealed on the left) -->
@@ -466,18 +547,18 @@
     </div>
     <!-- FOREGROUND · text (doesn't block the drag) -->
     <div style="position: relative; z-index: 25; pointer-events: none; max-width: 1320px; margin: 0 auto; width: 100%;">
-      <div style="max-width: 560px; opacity: var(--rv,0); transform: translateY(var(--rvy,22px)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
+      <div style="max-width: 560px; opacity: var(--rv,0); transform: translate3d(var(--rvx,0px), var(--rvy,22px), 0) scale(var(--rvs,1)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
         <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#c9a47a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 30px;"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="m9 16 2 2 4-4"></path></svg>
-        <h2 style="font-size: clamp(32px, 4.4vw, 60px); font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; margin: 0 0 30px; color: #fff; text-shadow: 0 2px 26px rgba(0,0,0,0.6);">Você não recebe “para ver se ficou bom”. Recebe porque ficou bom.</h2>
-        <p style="font-size: 19px; line-height: 1.55; color: #ececf1; max-width: 520px; margin: 0; text-shadow: 0 1px 18px rgba(0,0,0,0.6);">Cada projeto tem um arquiteto acompanhando do levantamento à entrega. Nenhuma decisão técnica relevante é tomada sem revisão qualificada e se algo não estiver de acordo durante a execução, corrigimos antes da entrega, não depois.</p>
+        <h2 style="font-size: clamp(32px, 4.4vw, 60px); font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; margin: 0 0 30px; color: #fff; text-shadow: 0 2px 26px rgba(0,0,0,0.6);">A conferência acontece antes da entrega.</h2>
+        <p style="font-size: 19px; line-height: 1.55; color: #ececf1; max-width: 520px; margin: 0; text-shadow: 0 1px 18px rgba(0,0,0,0.6);">Cada projeto tem um arquiteto acompanhando do levantamento à instalação. As decisões técnicas passam por revisão e, se algo sair diferente do especificado, o ajuste é feito ainda na produção.</p>
       </div>
     </div>
   </section>
 
   <!-- ===================== FAQ ===================== -->
   <section id="faq" style="background: #ffffff; padding: 116px 32px;">
-    <div style="max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 56px;">
-      <div style="opacity: var(--rv,0); transform: translateY(var(--rvy,22px)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
+    <div style="max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 56px;" data-r="two">
+      <div style="opacity: var(--rv,0); transform: translate3d(var(--rvx,0px), var(--rvy,22px), 0) scale(var(--rvs,1)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
         <div style="font-size: 14px; font-weight: 600; color: var(--accent,#0066cc); margin-bottom: 14px;">Perguntas frequentes</div>
         <h2 style="font-size: clamp(36px, 4.2vw, 58px); font-weight: 600; line-height: 1.08; letter-spacing: -0.03em; margin: 0; position: sticky; top: 84px;">As dúvidas que aparecem antes de começar.</h2>
       </div>
@@ -499,9 +580,9 @@
 
   <!-- ===================== FINAL CTA (dark) ===================== -->
   <section style="background: #1d1d1f; color: #f5f5f7; padding: 140px 32px;">
-    <div style="max-width: 860px; margin: 0 auto; text-align: center; opacity: var(--rv,0); transform: translateY(var(--rvy,22px)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
+    <div style="max-width: 860px; margin: 0 auto; text-align: center; opacity: var(--rv,0); transform: translate3d(var(--rvx,0px), var(--rvy,22px), 0) scale(var(--rvs,1)); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);">
       <h2 style="font-size: clamp(40px, 5.6vw, 84px); font-weight: 600; line-height: 1.04; letter-spacing: -0.03em; margin: 0 0 24px; color: #f5f5f7;">O apartamento que finalmente parece seu.</h2>
-      <p style="font-size: 20px; line-height: 1.5; color: #d2d2d7; max-width: 560px; margin: 0 auto 40px;">Mais de 500 famílias já vivem no espaço que imaginaram sem ruído, sem surpresa, sem a sensação de ter cedido no caminho.</p>
+      <p style="font-size: 20px; line-height: 1.5; color: #d2d2d7; max-width: 560px; margin: 0 auto 40px;">Mais de 500 famílias já moram no espaço que imaginaram, com prazo cumprido e sem concessões no caminho.</p>
       <a href="{{ waLink }}" target="_blank" rel="noopener" style="text-decoration: none; display: inline-flex; align-items: center; gap: 10px; background: #25d366; color: #fff; padding: 16px 34px; font-size: 18px; border-radius: 9999px; font-weight: 700;" style-active="transform:scale(0.96);">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"></path></svg>
         Solicitar meu orçamento
@@ -513,18 +594,19 @@
   <!-- ===================== FOOTER ===================== -->
   <footer style="background: #f5f5f7; color: #6e6e73; padding: 64px 32px 100px;">
     <div style="max-width: 1320px; margin: 0 auto;">
-      <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid #d2d2d7;">
+      <div data-r="foot" style="display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid #d2d2d7;">
         <div>
           <div style="display: flex; align-items: baseline; gap: 10px;">
             <span style="font-size: 19px; font-weight: 600; letter-spacing: 0.32em; text-indent: 0.32em; color: #1d1d1f;">SOBRAL</span>
             <span style="font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; color: #86868b;">Desde 2010</span>
           </div>
-          <p style="font-size: 14px; line-height: 1.55; max-width: 320px; margin: 20px 0 0;">A Sobral atende um número limitado de projetos por mês é como garantimos a cada cliente o nível de atenção que o projeto exige.</p>
+          <p style="font-size: 14px; line-height: 1.55; max-width: 320px; margin: 20px 0 0;">A Sobral atende um número limitado de projetos por mês. É assim que cada cliente recebe a atenção que o projeto exige.</p>
         </div>
         <div>
           <div style="font-size: 13px; font-weight: 600; color: #1d1d1f; margin-bottom: 16px;">Navegação</div>
           <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px;">
             <a href="#projetos" style="color: #6e6e73; text-decoration: none;" style-hover="color:#1d1d1f;">Projetos</a>
+            <a href="#galeria" style="color: #6e6e73; text-decoration: none;" style-hover="color:#1d1d1f;">Galeria</a>
             <a href="#processo" style="color: #6e6e73; text-decoration: none;" style-hover="color:#1d1d1f;">Processo</a>
             <a href="#materiais" style="color: #6e6e73; text-decoration: none;" style-hover="color:#1d1d1f;">Materiais</a>
             <a href="#faq" style="color: #6e6e73; text-decoration: none;" style-hover="color:#1d1d1f;">FAQ</a>
@@ -549,7 +631,7 @@
   <!-- ===================== STICKY CTA BAR ===================== -->
   <sc-if value="{{ showSticky }}" hint-placeholder-val="{{ false }}">
     <div style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; background: rgba(245,245,247,0.82); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-top: 1px solid rgba(0,0,0,0.08); animation: barUp 0.4s both;">
-      <div style="max-width: 1320px; margin: 0 auto; padding: 12px 32px; display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+      <div style="max-width: 1320px; margin: 0 auto; padding: 12px 32px; display: flex; align-items: center; justify-content: space-between; gap: 20px;" data-r="sticky">
         <div style="display: flex; align-items: baseline; gap: 14px;">
           <span style="font-size: 17px; font-weight: 600; color: #1d1d1f; letter-spacing: -0.02em;">Pronto para começar seu projeto?</span>
           <span style="font-size: 13px; color: #86868b;">Vagas limitadas este mês</span>
@@ -566,13 +648,36 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{
   &quot;$preview&quot;: { &quot;width&quot;: 1320, &quot;height&quot;: 920 },
-  &quot;headline&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;A marcenaria que entende o que você quer. Na primeira conversa.&quot;, &quot;tsType&quot;: &quot;string&quot; },
-  &quot;subheadline&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Há 16 anos transformamos projetos complexos em espaços reais com arquiteto em cada etapa, na materialidade certa, no prazo combinado.&quot;, &quot;tsType&quot;: &quot;string&quot; },
+  &quot;headline&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Marcenaria que entende seu projeto na primeira conversa.&quot;, &quot;tsType&quot;: &quot;string&quot; },
+  &quot;subheadline&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Há 16 anos executamos marcenaria no Rio e em Niterói, com arquiteto acompanhando cada etapa, a materialidade especificada e o prazo combinado.&quot;, &quot;tsType&quot;: &quot;string&quot; },
+  &quot;heroMedia&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;foto&quot;, &quot;options&quot;: [&quot;foto&quot;, &quot;video&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Mídia do hero&quot; },
+  &quot;heroVideo&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;videos/hero.mp4&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Mídia do hero&quot; },
+  &quot;heroPoster&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;images/sobral-hero.webp&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Mídia do hero&quot; },
   &quot;accent&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#8a5a3c&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#8a5a3c&quot;, &quot;#6b4226&quot;] },
   &quot;whatsapp&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;+55 (21) 99427-8820&quot;, &quot;tsType&quot;: &quot;string&quot; }
 }">
 class Component extends DCLogic {
-  state = { openFaq: -1, showSticky: false, activeCloset: -1, galleryIndex: 0, galeriaIndex: -1, compareInset: 50, compareDown: false };
+  state = { openFaq: -1, showSticky: false, activeCloset: -1, galleryIndex: 0, galeriaIndex: -1, compareInset: 50, compareDown: false, heroMode: '', heroBlob: '', heroFile: '' };
+
+  heroInput() {
+    if (!this._heroInput) {
+      const i = document.createElement('input');
+      i.type = 'file';
+      i.accept = 'video/mp4,video/webm,video/quicktime';
+      i.style.display = 'none';
+      i.addEventListener('change', () => {
+        const file = i.files && i.files[0];
+        if (!file) return;
+        if (this._heroBlobUrl) URL.revokeObjectURL(this._heroBlobUrl);
+        this._heroBlobUrl = URL.createObjectURL(file);
+        const mb = (file.size / 1048576).toFixed(1);
+        this.setState({ heroMode: 'video', heroBlob: this._heroBlobUrl, heroFile: file.name + ' · ' + mb + ' MB' });
+      });
+      document.body.appendChild(i);
+      this._heroInput = i;
+    }
+    return this._heroInput;
+  }
 
   applyAccent() {
     if (this.root) this.root.style.setProperty('--accent', this.props.accent || '#8a5a3c');
@@ -581,12 +686,39 @@ class Component extends DCLogic {
   componentDidMount() {
     this.applyAccent();
     const root = this.root || document;
-    const reveal = (el) => { el.style.setProperty('--rv', '1'); el.style.setProperty('--rvy', '0px'); };
-    const revealNow = (el) => { el.style.transition = 'none'; el.style.setProperty('--rv', '1'); el.style.setProperty('--rvy', '0px'); };
+    const settle = (el) => {
+      el.style.setProperty('--rv', '1');
+      el.style.setProperty('--rvy', '0px');
+      el.style.setProperty('--rvx', '0px');
+      el.style.setProperty('--rvs', '1');
+    };
+    const reveal = settle;
+    const revealNow = (el) => { el.style.transition = 'none'; el.style.transitionDelay = '0s'; settle(el); };
     const els = Array.from(root.querySelectorAll('*')).filter((el) => {
       const s = el.getAttribute('style');
       return s && s.indexOf('var(--rv') > -1;
     });
+
+    // variedade de entrada por seção: colunas deslizam do lado, blocos centrais sobem
+    const sections = Array.from(root.querySelectorAll('section'));
+    const groups = new Map();
+    els.forEach((el) => {
+      const sec = el.closest ? el.closest('section') : null;
+      if (!groups.has(sec)) groups.set(sec, []);
+      groups.get(sec).push(el);
+    });
+    const vw = window.innerWidth || 1200;
+    groups.forEach((list, sec) => {
+      const si = sections.indexOf(sec);
+      list.forEach((el, j) => {
+        if (j > 0) el.style.transitionDelay = (j * 0.09).toFixed(2) + 's';
+        el.style.setProperty('--rvs', '0.985');
+        if (list.length > 1 && vw > 860 && el.getBoundingClientRect().width < vw * 0.62) {
+          el.style.setProperty('--rvx', si % 2 === 0 ? '-26px' : '26px');
+        }
+      });
+    });
+
     const vh = window.innerHeight || 800;
     const pending = [];
     els.forEach((el) => {
@@ -642,16 +774,70 @@ class Component extends DCLogic {
       }
       this._benefitsTimer = setTimeout(() => cards.forEach(popIn), 3000);
     }
+
+    // stagger nas grades marcadas (processo, materiais, dores)
+    const staggerGrids = Array.from(root.querySelectorAll('[data-stagger]'));
+    if (staggerGrids.length) {
+      const showIt = (el) => { el.style.opacity = '1'; el.style.transform = 'none'; };
+      this._sio = ('IntersectionObserver' in window) ? new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) { showIt(e.target); this._sio.unobserve(e.target); } });
+      }, { threshold: 0.12 }) : null;
+      staggerGrids.forEach((grid) => {
+        Array.from(grid.children).forEach((el, i) => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(26px)';
+          el.style.transition = 'opacity .6s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1)';
+          el.style.transitionDelay = (i * 0.07).toFixed(2) + 's';
+          if (this._sio) this._sio.observe(el); else showIt(el);
+        });
+      });
+      this._staggerTimer = setTimeout(() => {
+        staggerGrids.forEach((g) => Array.from(g.children).forEach(showIt));
+      }, 3200);
+    }
+
+    // parallax suave nas fotos full-bleed
+    const pxEls = Array.from(root.querySelectorAll('[data-parallax]'));
+    if (pxEls.length) {
+      let raf = 0;
+      this._onParallax = () => {
+        if (raf) return;
+        raf = requestAnimationFrame(() => {
+          raf = 0;
+          if (window.innerWidth <= 620) return;
+          const vh2 = window.innerHeight || 800;
+          pxEls.forEach((el) => {
+            const host = el.parentElement || el;
+            const r = host.getBoundingClientRect();
+            if (r.bottom < -120 || r.top > vh2 + 120) return;
+            const k = parseFloat(el.getAttribute('data-parallax')) || 0.1;
+            const mid = r.top + r.height / 2 - vh2 / 2;
+            el.style.transform = 'translate3d(0,' + (-mid * k).toFixed(1) + 'px,0) scale(1.1)';
+          });
+        });
+      };
+      window.addEventListener('scroll', this._onParallax, { passive: true });
+      window.addEventListener('resize', this._onParallax, { passive: true });
+      this._onParallax();
+    }
   }
   componentDidUpdate() { this.applyAccent(); }
   componentWillUnmount() {
     window.removeEventListener('scroll', this._onScroll);
     window.removeEventListener('keydown', this._onKey);
     window.removeEventListener('pointermove', this._onGlowMove);
+    if (this._onParallax) {
+      window.removeEventListener('scroll', this._onParallax);
+      window.removeEventListener('resize', this._onParallax);
+    }
     if (this._io) this._io.disconnect();
     if (this._bio) this._bio.disconnect();
+    if (this._sio) this._sio.disconnect();
+    if (this._heroBlobUrl) URL.revokeObjectURL(this._heroBlobUrl);
+    if (this._heroInput && this._heroInput.parentNode) this._heroInput.parentNode.removeChild(this._heroInput);
     clearTimeout(this._revealTimer);
     clearTimeout(this._benefitsTimer);
+    clearTimeout(this._staggerTimer);
   }
 
   onGalleryScroll = () => {
@@ -694,8 +880,8 @@ class Component extends DCLogic {
   };
 
   renderVals() {
-    const headline = this.props.headline ?? 'A marcenaria que entende o que você quer. Na primeira conversa.';
-    const subheadline = this.props.subheadline ?? 'Há 16 anos transformamos projetos complexos em espaços reais com arquiteto em cada etapa, na materialidade certa, no prazo combinado.';
+    const headline = this.props.headline ?? 'Marcenaria que entende seu projeto na primeira conversa.';
+    const subheadline = this.props.subheadline ?? 'Há 16 anos executamos marcenaria no Rio e em Niterói, com arquiteto acompanhando cada etapa, a materialidade especificada e o prazo combinado.';
     const phone = this.props.whatsapp ?? '+55 (21) 99427-8820';
     const msg = this.props.whatsappMessage ?? 'Olá! Gostaria de solicitar um orçamento com a Sobral Marcenaria.';
     const digits = String(phone).replace(/\D/g, '');
@@ -708,6 +894,50 @@ class Component extends DCLogic {
       if (inp) inp.click();
     };
     const uploadCozinha = () => triggerSlotUpload('sobral-cozinha');
+
+    // ---- mídia do hero: foto ou vídeo curto ----
+    const cfg = (typeof window !== 'undefined' && window.SOBRAL) || {};
+    // cfg (window.SOBRAL, definido no index.html publicado) tem prioridade sobre o default dos props
+    const heroMode = this.state.heroMode || cfg.heroMedia || this.props.heroMedia || 'foto';
+    const heroIsVideo = heroMode === 'video';
+    const heroIsPhoto = !heroIsVideo;
+    const heroVideoSrc = this.state.heroBlob || this.props.heroVideo || cfg.heroVideo || 'videos/hero.mp4';
+    const heroPoster = this.props.heroPoster || cfg.heroPoster || 'images/sobral-hero.webp';
+    const heroUseFoto = () => this.setState({ heroMode: 'foto' });
+    const heroUseVideo = () => this.heroInput().click();
+    const heroVideoHint = this.state.heroFile
+      ? 'Prévia: ' + this.state.heroFile + '. No site publicado, envie o arquivo como videos/hero.mp4'
+      : 'MP4 (H.264), 1920×1080, 6–12 s, sem áudio, até ~4 MB. Salve como videos/hero.mp4';
+    const heroVideoRef = (el) => {
+      this._heroVideo = el;
+      if (!el) return;
+      // src/poster atribuídos aqui (nunca via hole) para não disparar request de URL não resolvida
+      if (el.getAttribute('poster') !== heroPoster) el.poster = heroPoster;
+      el.muted = true;
+      el.defaultMuted = true;
+      el.loop = true;
+      el.autoplay = true;
+      el.playsInline = true;
+      el.setAttribute('playsinline', '');
+      el.setAttribute('webkit-playsinline', '');
+      el.setAttribute('muted', '');
+      const tryPlay = () => { const p = el.play(); if (p && p.catch) p.catch(() => {}); };
+      if (el.getAttribute('src') !== heroVideoSrc) {
+        el.src = heroVideoSrc;
+        el.load();
+      }
+      if (!el._sobralWired) {
+        el._sobralWired = true;
+        el.addEventListener('loadeddata', tryPlay);
+        el.addEventListener('canplay', tryPlay);
+        // primeiro gesto do usuário destrava o play em navegadores que bloqueiam autoplay
+        const unlock = () => { tryPlay(); document.removeEventListener('touchstart', unlock); document.removeEventListener('click', unlock); };
+        document.addEventListener('touchstart', unlock, { once: true, passive: true });
+        document.addEventListener('click', unlock, { once: true });
+        el.addEventListener('error', () => { if (!this.state.heroBlob) this.setState({ heroMode: 'foto' }); });
+      }
+      tryPlay();
+    };
 
     const galleryItems = [
       { id: 'g1', title: 'Painel ripado', slotId: 'sala-1', ph: 'Foto · painel ripado' },
@@ -764,7 +994,7 @@ class Component extends DCLogic {
     ];
 
     const testimonials = [
-      { role: 'Arquiteto parceiro', meta: 'Projeto residencial', slotId: 'depo-1', focus: 'Confio a execução dos meus projetos à Sobral — prazo cumprido, materialidade respeitada, cliente final satisfeito.' },
+      { role: 'Arquiteto parceiro', meta: 'Projeto residencial', slotId: 'depo-1', focus: 'Confio a execução dos meus projetos à Sobral: prazo cumprido, materialidade respeitada e cliente final satisfeito.' },
       { role: 'Cliente final', meta: 'Apartamento completo', slotId: 'depo-2', focus: 'Não precisei explicar duas vezes. Recebi exatamente o que imaginei, no prazo, sem nenhum ruído.' },
       { role: 'Investidor', meta: 'Imóvel para locação', slotId: 'depo-3', focus: 'Imóvel valorizado, materiais duráveis e uma experiência de compra sem estresse do começo ao fim.' },
       { role: 'Arquiteta', meta: 'Cozinha + closet', slotId: 'depo-4', focus: 'A marcenaria saiu idêntica ao projeto. Detalhamento impecável e zero retrabalho na obra.' },
@@ -784,13 +1014,13 @@ class Component extends DCLogic {
     ];
 
     const faqData = [
-      { q: 'Quanto tempo leva um projeto completo?', a: 'Depende do escopo — um cômodo ou um apartamento inteiro têm prazos diferentes. Na visita técnica, definimos o cronograma real com base no seu projeto. Prazos são documentados e cumpridos.' },
+      { q: 'Quanto tempo leva um projeto completo?', a: 'Depende do escopo: um cômodo e um apartamento inteiro têm prazos bem diferentes. O cronograma é definido na visita técnica, com base no seu projeto, e fica registrado.' },
       { q: 'Vocês atendem arquitetos e designers de interiores?', a: 'Sim. Temos 30+ arquitetos parceiros ativos no Rio de Janeiro e Niterói. Trabalhamos com projeto fornecido pelo arquiteto ou desenvolvemos internamente com acompanhamento técnico especializado.' },
-      { q: 'E se não ficar igual ao que imaginei?', a: 'É exatamente para isso que o arquiteto está no projeto. Se algo não estiver alinhado durante a execução, ajustamos antes de terminar — não depois da instalação.' },
-      { q: 'Tenho medo do preço estourar no meio do projeto.', a: 'Antes de começar, o projeto é especificado com clareza — materiais, dimensões, acabamentos. O orçamento é fechado com base nessa especificação. Itens extras só entram com a sua aprovação explícita.' },
-      { q: 'Qual o valor de um projeto?', a: 'O valor é calculado com base em área, materialidade e especificações. Solicite orçamento para receber uma proposta personalizada — sem compromisso.' },
+      { q: 'E se não ficar igual ao que imaginei?', a: 'É para isso que o arquiteto acompanha a produção. Se algo sair diferente do combinado, o ajuste é feito antes da instalação.' },
+      { q: 'Tenho medo do preço estourar no meio do projeto.', a: 'Antes de começar, o projeto é especificado item por item: materiais, dimensões e acabamentos. O orçamento é fechado sobre essa especificação e qualquer item extra só entra com a sua aprovação.' },
+      { q: 'Qual o valor de um projeto?', a: 'O valor é calculado com base em área, materialidade e especificações. Solicite o orçamento para receber uma proposta para o seu caso, sem compromisso.' },
       { q: 'Vocês trabalham com quais materiais?', a: 'Madeira natural, vidro, serralheria, pintura laqueada, vernizes, forrações em madeira natural, ferragens especiais e itens exclusivos. Se foi especificado em projeto, a Sobral executa.' },
-      { q: 'Como funciona o orçamento?', a: 'Entre em contato via WhatsApp e informe o tipo de ambiente e o projeto (se houver). Em até 24h, nossa equipe retorna para agendar visita técnica presencial — sem custo e sem compromisso.' },
+      { q: 'Como funciona o orçamento?', a: 'Entre em contato via WhatsApp e informe o tipo de ambiente e o projeto (se houver). Em até 24h a equipe retorna para agendar a visita técnica presencial, sem custo e sem compromisso.' },
       { q: 'Vocês atendem fora do Rio de Janeiro?', a: 'Atualmente atendemos Rio de Janeiro e Niterói. Para projetos fora dessas regiões, consulte disponibilidade diretamente via WhatsApp.' },
     ];
     const faqs = faqData.map((f, i) => {
@@ -826,6 +1056,12 @@ class Component extends DCLogic {
       phoneLabel: phone,
       showSticky: this.state.showSticky,
       editable, uploadCozinha,
+      heroIsVideo, heroIsPhoto, heroVideoSrc, heroPoster, heroVideoRef,
+      heroUseFoto, heroUseVideo, heroVideoHint,
+      heroFotoBg: heroIsPhoto ? '#fff' : 'transparent',
+      heroFotoFg: heroIsPhoto ? '#1d1d1f' : '#fff',
+      heroVideoBg: heroIsVideo ? '#fff' : 'transparent',
+      heroVideoFg: heroIsVideo ? '#1d1d1f' : '#fff',
       heroPoints, closets, stats, pains, materials, testimonials, faqs,
       testimonialColumns,
       galleryItems, galleryDots, galleryPrev, galleryNext,
